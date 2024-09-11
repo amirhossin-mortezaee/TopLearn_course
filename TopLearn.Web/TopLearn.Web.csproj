@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.2" />
@@ -22,6 +18,10 @@
   <ItemGroup>
     <ProjectReference Include="..\TopLearn.Core\TopLearn.Core.csproj" />
     <ProjectReference Include="..\TopLearn.DataLayer\TopLearn.DataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
   </ItemGroup>
 
 </Project>

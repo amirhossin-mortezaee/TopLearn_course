@@ -181,6 +181,11 @@
         }
       },
       "TopLearn.Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.1.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.2",
+          "TopLearn.DataLayer": "1.0.0"
+        },
         "runtime": {
           "TopLearn.Core.dll": {}
         },
