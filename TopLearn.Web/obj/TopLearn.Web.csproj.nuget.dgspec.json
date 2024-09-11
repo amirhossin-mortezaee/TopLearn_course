@@ -1,17 +1,96 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E02\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {}
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {}
   },
   "projects": {
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E02\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E02\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
-        "projectName": "TopLearn.Web",
-        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E02\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+        "projectName": "TopLearn.Core",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
         "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E02\\TopLearn\\TopLearn.Web\\obj\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alizakizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+        "projectName": "TopLearn.DataLayer",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +123,88 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+        "projectName": "TopLearn.Web",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+        "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alizakizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
+                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
+              },
+              "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E03\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -51,6 +212,20 @@
               "autoReferenced": true
             },
             "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.2, )"
