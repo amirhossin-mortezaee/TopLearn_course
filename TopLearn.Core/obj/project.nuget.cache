@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ky1OGVD6ycmgkmHhO9ANsYeFXogskYlCXjsuvw2VpLt/10GP2ltFh4LiX6luB3v2XE21sjh3Jij9z+Aji8QsIA==",
+  "success": true,
+  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E02\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.1.0\\microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.1.0\\microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
