@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </nav>
-        @RenderSection("SearchBox",false)
+            @RenderSection("SearchBox", false)
         </div>
     </div>
 
@@ -45,7 +45,7 @@
     <partial name="_MainMenu" />
     <!-- /main manu -->
     <!-- content -->
-   @RenderBody()
+    @RenderBody()
     <!-- /content -->
     <!-- footer -->
     <partial name="_Footer" />
@@ -53,5 +53,7 @@
 
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

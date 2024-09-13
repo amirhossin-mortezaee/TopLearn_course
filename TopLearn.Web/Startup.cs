@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TopLearn.Core.Services;
+using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Context;
 
 namespace TopLearn.Web
@@ -32,6 +34,9 @@ namespace TopLearn.Web
                 options.UseSqlServer(Configuration.GetConnectionString("TopLearnConnection"));
             });
 
+            #endregion
+            #region IOC
+            services.AddTransient<IUserService, UserService>();
             #endregion
         }
 
