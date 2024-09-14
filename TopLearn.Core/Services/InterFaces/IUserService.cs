@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TopLearn.DataLayer.Entities.User;
 
 namespace TopLearn.Core.Services.InterFaces
 {
@@ -8,5 +9,6 @@ namespace TopLearn.Core.Services.InterFaces
     {
         bool IsExistUserName(string userName);
         bool ISExistEmail(string email);
+        int AddUser(User user);
     }
 }

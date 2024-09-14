@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/4vu5P4cBFud+UMbdgVg3/yFoDrNfK2j17Kzh6iCGIXFFa0uheSGuTDpYoZH+TMl8esBhZNMe82NrcjTByfItA==",
+  "dgSpecHash": "MLnjhekoZEP33ho8Hs8+A05B7wxp7WRdL89NvH1/lIa4b6tIVH5BHuHOJzOCJBsusaxOGaQsTNe+5oh82SlcjQ==",
   "success": true,
-  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E05\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

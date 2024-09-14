@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E05\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {}
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {}
   },
   "projects": {
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E05\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E05\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
         "projectName": "TopLearn.DataLayer",
-        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E05\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
         "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E05\\TopLearn\\TopLearn.DataLayer\\obj\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
