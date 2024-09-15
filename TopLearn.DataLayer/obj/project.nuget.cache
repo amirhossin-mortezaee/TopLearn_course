@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RT2oGE1TVNcvwDIin6DsP+1eJ1O39x4txn3nN1S5rYGd+Y/qPkEM6Bp3XVpHo+AkdJqaj1moAh1+QjQUlO7/AA==",
+  "dgSpecHash": "pSRInFL3eFl27WUQ4qQDQNeI3vaKe6Tsuc9dha7AEMO2eJVju5NTRrlZXmkj5xpYKif43S7cXTleF4geAzKJDQ==",
   "success": true,
-  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E08\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.entityframeworkcore\\2.1.2\\microsoft.entityframeworkcore.2.1.2.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.1.2\\microsoft.entityframeworkcore.abstractions.2.1.2.nupkg.sha512",

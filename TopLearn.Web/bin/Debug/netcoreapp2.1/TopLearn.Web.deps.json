@@ -38,6 +38,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
+          "System.Security.Claims": "4.3.0",
           "TopLearn.Core": "1.0.0",
           "TopLearn.DataLayer": "1.0.0"
         },
