@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {}
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {}
   },
   "projects": {
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
         "projectName": "TopLearn.Core",
-        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
         "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Core\\obj\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
-                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+              "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
         "projectName": "TopLearn.DataLayer",
-        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj",
         "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\obj\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -158,14 +158,14 @@
         }
       }
     },
-    "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {
+    "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+        "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
         "projectName": "TopLearn.Web",
-        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+        "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
         "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Web\\obj\\",
+        "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -186,11 +186,11 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
-                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
+              "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
+                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
               },
-              "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
-                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E06\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+              "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+                "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E07\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
               }
             }
           }
@@ -205,16 +205,28 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.1.7, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.1, )",
               "autoReferenced": true
             },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.1.3, )"
+            },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.2, )"
+            },
+            "Microsoft.AspNetCore.StaticFiles": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -235,6 +247,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.10, )"
             }
           },
           "imports": [
