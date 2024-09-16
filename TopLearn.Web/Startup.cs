@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TopLearn.Core.Convertors;
 using TopLearn.Core.Services;
 using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Context;
@@ -51,6 +52,7 @@ namespace TopLearn.Web
             #endregion
             #region IOC
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IViewRenderService, RenderViewToString>();
             #endregion
         }
 

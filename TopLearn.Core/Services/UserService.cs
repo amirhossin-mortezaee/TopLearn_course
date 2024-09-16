@@ -42,6 +42,16 @@ namespace TopLearn.Core.Services
             return user.UserId;
         }
 
+        public User GetUserByActiveCode(string activeCode)
+        {
+            return _context.Users.SingleOrDefault(u => u.ActiveCode == activeCode);
+        }
+
+        public User GetUserByEmail(string Email)
+        {
+            return _context.Users.SingleOrDefault(u => u.Email == Email);
+        }
+
         public bool ISExistEmail(string email)
         {
             return _context.Users.Any(u => u.Email == email);
@@ -57,6 +67,12 @@ namespace TopLearn.Core.Services
             string hashPassWord = PasswordHelper.EncodePasswordMd5(login.PassWord);
             string email = FixedText.FixEmail(login.Email);
             return _context.Users.SingleOrDefault(u => u.Email == email && u.PassWord == hashPassWord);
+        }
+
+        public void UpdateUser(User user)
+        {
+            _context.Users.Update(user);
+            _context.SaveChanges();
         }
     }
 }
