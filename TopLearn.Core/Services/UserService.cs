@@ -52,6 +52,23 @@ namespace TopLearn.Core.Services
             return _context.Users.SingleOrDefault(u => u.Email == Email);
         }
 
+        public User GetUserByUserName(string username)
+        {
+            return _context.Users.SingleOrDefault(u => u.UserName == username);
+        }
+
+        public InformationUserViewModel GetUserInformation(string username)
+        {
+            var user = GetUserByUserName(username);
+            InformationUserViewModel information = new InformationUserViewModel();
+            information.UserName = username;
+            information.Email = user.Email;
+            information.RegisterDate = user.RegisterDate;
+            information.Wallet = 0;
+
+            return information;
+        }
+
         public bool ISExistEmail(string email)
         {
             return _context.Users.Any(u => u.Email == email);
