@@ -42,6 +42,16 @@ namespace TopLearn.Core.Services
             return user.UserId;
         }
 
+        public SideBarUserPanelViewModel GetSideBarUserPanelData(string username)
+        {
+            return _context.Users.Where(u => u.UserName == username).Select(u => new SideBarUserPanelViewModel()
+            {
+                UserName = u.UserName,
+                ImageName = u.UserAvatar,
+                RegisterDate = u.RegisterDate
+            }).Single();
+        }
+
         public User GetUserByActiveCode(string activeCode)
         {
             return _context.Users.SingleOrDefault(u => u.ActiveCode == activeCode);
