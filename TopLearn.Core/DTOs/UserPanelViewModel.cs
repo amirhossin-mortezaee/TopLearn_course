@@ -38,4 +38,23 @@ namespace TopLearn.Core.DTOs
 
         public string AvatarName { get; set; }
     }
+
+    public class ChangePasswordViewModel
+    {
+        [Display(Name = "کلمه عبور فعلی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
+        public string oldPassWord { get; set; }
+
+        [Display(Name = "کلمه عبور")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
+        public string PassWord { get; set; }
+
+        [Display(Name = "تکرار کلمه عبور")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
+        [Compare("PassWord", ErrorMessage = "کلمه های عبور با هم مغایرت دارند")]
+        public string RePassWord { get; set; }
+    }
 }

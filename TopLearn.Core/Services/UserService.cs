@@ -43,6 +43,19 @@ namespace TopLearn.Core.Services
             return user.UserId;
         }
 
+        public void ChangeUserPassword(string userName, string newPassword)
+        {
+            var user = GetUserByUserName(userName);
+            user.PassWord = PasswordHelper.EncodePasswordMd5(newPassword);
+            UpdateUser(user);
+        }
+
+        public bool CompareOldPassword(string oldPassword, string username)
+        {
+            string hashOldPassword = PasswordHelper.EncodePasswordMd5(oldPassword);
+            return _context.Users.Any(u => u.UserName == username && u.PassWord == hashOldPassword);
+        }
+
         public void EditProfile(string username ,EditProfileViewModel profile)
         {
             if(profile.UserAvatar != null)
