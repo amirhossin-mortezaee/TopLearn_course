@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using TopLearn.Core.Convertors;
@@ -40,6 +41,48 @@ namespace TopLearn.Core.Services
             _context.Users.Add(user);
             _context.SaveChanges();
             return user.UserId;
+        }
+
+        public void EditProfile(string username ,EditProfileViewModel profile)
+        {
+            if(profile.UserAvatar != null)
+            {
+                string imagePath = "";
+                if(profile.AvatarName != "Defult.jpg")
+                {
+                    imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", profile.AvatarName);
+                    if (File.Exists(imagePath))
+                    {
+                        File.Delete(imagePath);
+                    }
+                }
+
+                profile.AvatarName = NameGenerator.GenerateUniqCode() + Path.GetExtension(profile.UserAvatar.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", profile.AvatarName);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.UserAvatar.CopyTo(stream);
+                }
+
+            }
+
+            var user = GetUserByUserName(username);
+            user.UserName = profile.UserName;
+            user.Email = profile.Email;
+            user.UserAvatar = profile.AvatarName;
+
+            UpdateUser(user);
+        }
+
+        public EditProfileViewModel GetDataForEditProfileUser(string username)
+        {
+            return _context.Users.Where(u => u.UserName == username).Select(u => new EditProfileViewModel()
+            {
+                Email = u.Email,
+                UserName = u.UserName,
+                AvatarName = u.UserAvatar
+            }).Single();
         }
 
         public SideBarUserPanelViewModel GetSideBarUserPanelData(string username)

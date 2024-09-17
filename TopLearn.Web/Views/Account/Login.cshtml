@@ -23,6 +23,13 @@
                 setTimeout(function () { window.location = "http://localhost:59480/UserPanel"; }, delay);
             </script>
         }
+
+        @if(ViewBag.EditProfile == true)
+            {
+                <div class="alert alert-warning">
+                    بدلیل ویرایش پروفایل و بارگذاری مجدد اطلاعات لطفا مجدد لاگین کنید
+                </div>
+            }
         <header><h2> ورود به سایت </h2></header>
 
         <div class="form-layer">
