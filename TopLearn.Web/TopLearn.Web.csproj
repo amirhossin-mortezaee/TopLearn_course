@@ -20,15 +20,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
     <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+    <PackageReference Include="ZarinPalSandbox" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TopLearn.Core\TopLearn.Core.csproj" />
     <ProjectReference Include="..\TopLearn.DataLayer\TopLearn.DataLayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Home\" />
   </ItemGroup>
 
   <ItemGroup>

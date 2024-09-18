@@ -44,10 +44,11 @@ namespace TopLearn.Core.Services
             return user.UserId;
         }
 
-        public void AddWallet(Wallet wallet)
+        public int AddWallet(Wallet wallet)
         {
             _context.Wallets.Add(wallet);
             _context.SaveChanges();
+            return wallet.WalletId;
         }
 
         public int BalanceUserWallet(string userName)
@@ -72,7 +73,7 @@ namespace TopLearn.Core.Services
             UpdateUser(user);
         }
 
-        public void ChargeWallet(string userName, int amount, string description, bool IsPay = false)
+        public int ChargeWallet(string userName, int amount, string description, bool IsPay = false)
         {
             Wallet wallet = new Wallet()
             {
@@ -84,7 +85,7 @@ namespace TopLearn.Core.Services
                 UserId = GetUserIdByUserName(userName)
             };
 
-            AddWallet(wallet);
+            return AddWallet(wallet);
         }
 
         public bool CompareOldPassword(string oldPassword, string username)
@@ -177,6 +178,11 @@ namespace TopLearn.Core.Services
             return information;
         }
 
+        public Wallet GetWalletByWalletId(int walletId)
+        {
+            return _context.Wallets.Find(walletId);
+        }
+
         public List<WalletViewModel> GetWalletUser(string userName)
         {
             int userId = GetUserIdByUserName(userName);
@@ -210,6 +216,12 @@ namespace TopLearn.Core.Services
         public void UpdateUser(User user)
         {
             _context.Users.Update(user);
+            _context.SaveChanges();
+        }
+
+        public void UpdateWallet(Wallet wallet)
+        {
+            _context.Wallets.Update(wallet);
             _context.SaveChanges();
         }
     }

@@ -4631,6 +4631,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "ZarinpalSandbox/2.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/ZarinpalSandbox.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/ZarinpalSandbox.dll": {}
+        }
+      },
       "TopLearn.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -12665,6 +12678,18 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "ZarinpalSandbox/2.0.4": {
+      "sha512": "bDuCkin4KqcZggLQBjDw0CK9PU6U8SmlLbJh7UHzcKBsSmKXmRE4myLls+A/cxDuqh0EucSAdthMiFM6odu58A==",
+      "type": "package",
+      "path": "zarinpalsandbox/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp1.0/ZarinpalSandbox.dll",
+        "zarinpalsandbox.2.0.4.nupkg.sha512",
+        "zarinpalsandbox.nuspec"
+      ]
+    },
     "TopLearn.Core/1.0.0": {
       "type": "project",
       "path": "../TopLearn.Core/TopLearn.Core.csproj",
@@ -12692,7 +12717,8 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
       "System.Security.Claims >= 4.3.0",
       "TopLearn.Core >= 1.0.0",
-      "TopLearn.DataLayer >= 1.0.0"
+      "TopLearn.DataLayer >= 1.0.0",
+      "ZarinPalSandbox >= 2.0.4"
     ]
   },
   "packageFolders": {
@@ -12702,11 +12728,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+      "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
       "projectName": "TopLearn.Web",
-      "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+      "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
       "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-      "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.Web\\obj\\",
+      "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12727,11 +12753,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
-              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
+            "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
+              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
             },
-            "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
-              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E15\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+            "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E16\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
             }
           }
         }
@@ -12803,6 +12829,10 @@
           "System.Security.Claims": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "ZarinPalSandbox": {
+            "target": "Package",
+            "version": "[2.0.4, )"
           }
         },
         "imports": [
