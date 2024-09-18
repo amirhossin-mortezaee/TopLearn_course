@@ -10,6 +10,7 @@ using TopLearn.Core.Security;
 using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Context;
 using TopLearn.DataLayer.Entities.User;
+using TopLearn.DataLayer.Entities.Wallet;
 
 namespace TopLearn.Core.Services
 {
@@ -43,11 +44,47 @@ namespace TopLearn.Core.Services
             return user.UserId;
         }
 
+        public void AddWallet(Wallet wallet)
+        {
+            _context.Wallets.Add(wallet);
+            _context.SaveChanges();
+        }
+
+        public int BalanceUserWallet(string userName)
+        {
+            int userId = GetUserIdByUserName(userName);
+
+            var enter = _context.Wallets.Where(w => w.UserId == userId && w.TypeId == 1 && w.IsPay)
+                .Select(w => w.Amount)
+                .ToList();
+
+            var exit = _context.Wallets.Where(w => w.UserId == userId && w.TypeId == 2)
+                .Select(w => w.Amount)
+                .ToList();
+
+            return (enter.Sum() - exit.Sum());
+        }
+
         public void ChangeUserPassword(string userName, string newPassword)
         {
             var user = GetUserByUserName(userName);
             user.PassWord = PasswordHelper.EncodePasswordMd5(newPassword);
             UpdateUser(user);
+        }
+
+        public void ChargeWallet(string userName, int amount, string description, bool IsPay = false)
+        {
+            Wallet wallet = new Wallet()
+            {
+                Amount = amount,
+                CreateDate = DateTime.Now,
+                Description = description,
+                IsPay = IsPay,
+                TypeId = 1,
+                UserId = GetUserIdByUserName(userName)
+            };
+
+            AddWallet(wallet);
         }
 
         public bool CompareOldPassword(string oldPassword, string username)
@@ -123,6 +160,11 @@ namespace TopLearn.Core.Services
             return _context.Users.SingleOrDefault(u => u.UserName == username);
         }
 
+        public int GetUserIdByUserName(string userName)
+        {
+            return _context.Users.Single(u => u.UserName == userName).UserId;
+        }
+
         public InformationUserViewModel GetUserInformation(string username)
         {
             var user = GetUserByUserName(username);
@@ -130,9 +172,22 @@ namespace TopLearn.Core.Services
             information.UserName = username;
             information.Email = user.Email;
             information.RegisterDate = user.RegisterDate;
-            information.Wallet = 0;
+            information.Wallet = BalanceUserWallet(username);
 
             return information;
+        }
+
+        public List<WalletViewModel> GetWalletUser(string userName)
+        {
+            int userId = GetUserIdByUserName(userName);
+            return _context.Wallets.Where(w => w.IsPay && w.UserId == userId)
+                .Select(w => new WalletViewModel()
+                {
+                    Amount = w.Amount,
+                    Type = w.TypeId, 
+                    Description = w.Description,
+                    DateTime = w.CreateDate
+                }).ToList();
         }
 
         public bool ISExistEmail(string email)
