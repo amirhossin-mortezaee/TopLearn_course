@@ -178,6 +178,31 @@ namespace TopLearn.Core.Services
             return information;
         }
 
+        public UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "", string filteruserName = "")
+        {
+            IQueryable<User> result = _context.Users;
+
+            if (!string.IsNullOrEmpty(filterEmail))
+            {
+                result = result.Where(u => u.Email.Contains(filterEmail));
+            }
+
+            if (!string.IsNullOrEmpty(filteruserName))
+            {
+                result = result.Where(u => u.UserName.Contains(filteruserName));
+            }
+
+            int take = 20;
+            int skip = (pageId - 1) * take;
+
+            UserForAdminViewModel List = new UserForAdminViewModel();
+            List.CurrentPage = pageId;
+            List.PageCount = result.Count() / take;
+            List.Users = result.OrderBy(u => u.RegisterDate).Skip(skip).Take(take).ToList();
+
+            return List;
+        }
+
         public Wallet GetWalletByWalletId(int walletId)
         {
             return _context.Wallets.Find(walletId);
