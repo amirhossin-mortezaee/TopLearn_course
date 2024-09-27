@@ -44,6 +44,35 @@ namespace TopLearn.Core.Services
             return user.UserId;
         }
 
+        public int AddUserFromAdmin(CreateUserViewModel user)
+        {
+            User addUser = new User();
+            addUser.PassWord = PasswordHelper.EncodePasswordMd5(user.PassWord);
+            addUser.ActiveCode = NameGenerator.GenerateUniqCode();
+            addUser.Email = user.Email;
+            addUser.IsActive = true;
+            addUser.RegisterDate = DateTime.Now;
+            addUser.UserName = user.UserName;
+
+            #region Save Avatar
+            if (user.UserAvatar != null)
+            {
+                string imagePath = "";
+
+                addUser.UserAvatar = NameGenerator.GenerateUniqCode() + Path.GetExtension(user.UserAvatar.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", addUser.UserAvatar);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    user.UserAvatar.CopyTo(stream);
+                }
+
+            }
+            #endregion
+
+            return AddUser(addUser);
+        }
+
         public int AddWallet(Wallet wallet)
         {
             _context.Wallets.Add(wallet);
