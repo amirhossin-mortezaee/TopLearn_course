@@ -22,9 +22,11 @@ namespace TopLearn.Core.Services.InterFaces
         bool ActiveAccount(string activeCode);
         int GetUserIdByUserName(string userName);
         void EditAvatar(EditAvatarUserViewModel editAvatar);
+        void DeleteUser(int userId);
 
         #region UserPanel
         InformationUserViewModel GetUserInformation(string username);
+        InformationUserViewModel GetUserInformation(int UserId);
         SideBarUserPanelViewModel GetSideBarUserPanelData(string username);
         EditProfileViewModel GetDataForEditProfileUser(string username);
         void EditProfile(string username ,EditProfileViewModel profile);
@@ -45,6 +47,7 @@ namespace TopLearn.Core.Services.InterFaces
         #region Admin Panel
 
         UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "" , string filteruserName = "");
+        UserForAdminViewModel GetDeleteUsers(int pageId = 1, string filterEmail = "", string filteruserName = "");
         int AddUserFromAdmin(CreateUserViewModel user);
 
         EditUserViewModel GetUserForShowInEditMode(int userId);

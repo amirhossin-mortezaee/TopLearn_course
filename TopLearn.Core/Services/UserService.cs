@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http.Internal;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -124,6 +125,13 @@ namespace TopLearn.Core.Services
             return _context.Users.Any(u => u.UserName == username && u.PassWord == hashOldPassword);
         }
 
+        public void DeleteUser(int userId)
+        {
+            User user = GetUserById(userId);
+            user.IsDelete = true;
+            UpdateUser(user);
+        }
+
         public void EditAvatar(EditAvatarUserViewModel editAvatar)
         {
             string imagePath = "";
@@ -213,6 +221,31 @@ namespace TopLearn.Core.Services
             }).Single();
         }
 
+        public UserForAdminViewModel GetDeleteUsers(int pageId = 1, string filterEmail = "", string filteruserName = "")
+        {
+            IQueryable<User> result = _context.Users.IgnoreQueryFilters().Where(u => u.IsDelete);
+
+            if (!string.IsNullOrEmpty(filterEmail))
+            {
+                result = result.Where(u => u.Email.Contains(filterEmail));
+            }
+
+            if (!string.IsNullOrEmpty(filteruserName))
+            {
+                result = result.Where(u => u.UserName.Contains(filteruserName));
+            }
+
+            int take = 20;
+            int skip = (pageId - 1) * take;
+
+            UserForAdminViewModel List = new UserForAdminViewModel();
+            List.CurrentPage = pageId;
+            List.PageCount = result.Count() / take;
+            List.Users = result.OrderBy(u => u.RegisterDate).Skip(skip).Take(take).ToList();
+
+            return List;
+        }
+
         public SideBarUserPanelViewModel GetSideBarUserPanelData(string username)
         {
             return _context.Users.Where(u => u.UserName == username).Select(u => new SideBarUserPanelViewModel()
@@ -269,6 +302,18 @@ namespace TopLearn.Core.Services
             information.Email = user.Email;
             information.RegisterDate = user.RegisterDate;
             information.Wallet = BalanceUserWallet(username);
+
+            return information;
+        }
+
+        public InformationUserViewModel GetUserInformation(int UserId)
+        {
+            var user = GetUserById(UserId);
+            InformationUserViewModel information = new InformationUserViewModel();
+            information.UserName = user.UserName;
+            information.Email = user.Email;
+            information.RegisterDate = user.RegisterDate;
+            information.Wallet = BalanceUserWallet(user.UserName);
 
             return information;
         }
