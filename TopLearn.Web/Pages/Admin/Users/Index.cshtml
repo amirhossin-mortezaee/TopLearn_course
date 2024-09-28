@@ -42,7 +42,7 @@
                         </div>
                         <div class="row">
                             <div class="container">
-                                <a class="btn btn-outline btn-success" id="create">افزودن کاربر جدید</a>
+                                <a asp-page="CreateUser" class="btn btn-outline btn-success" id="create">افزودن کاربر جدید</a>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                     </td>
                                     <td>@user.RegisterDate.ToShamsi()</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning btn-sm">
+                                        <a href="/Admin/Users/EditUser/@user.UserId" class="btn btn-warning btn-sm">
                                             ویرایش
                                         </a>
                                         <a href="#" class="btn btn-danger btn-sm">

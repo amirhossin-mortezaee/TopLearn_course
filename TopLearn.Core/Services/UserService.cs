@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http.Internal;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace TopLearn.Core.Services
         public bool ActiveAccount(string activeCode)
         {
             var user = _context.Users.SingleOrDefault(u => u.ActiveCode == activeCode);
-            if(user == null || user.IsActive)
+            if (user == null || user.IsActive)
             {
                 return false;
             }
@@ -123,12 +124,36 @@ namespace TopLearn.Core.Services
             return _context.Users.Any(u => u.UserName == username && u.PassWord == hashOldPassword);
         }
 
-        public void EditProfile(string username ,EditProfileViewModel profile)
+        public void EditAvatar(EditAvatarUserViewModel editAvatar)
         {
-            if(profile.UserAvatar != null)
+            string imagePath = "";
+            if (editAvatar.AvatarName != "Defult.jpg")
+            {
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", editAvatar.AvatarName);
+                if (File.Exists(imagePath))
+                {
+                    File.Delete(imagePath);
+                }
+            }
+
+            editAvatar.AvatarName = NameGenerator.GenerateUniqCode() + Path.GetExtension(editAvatar.UserAvatar.FileName);
+            imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", editAvatar.AvatarName);
+
+            using (var stream = new FileStream(imagePath, FileMode.Create))
+            {
+                editAvatar.UserAvatar.CopyTo(stream);
+            }
+
+            User user = GetUserById(editAvatar.UserId);
+            user.UserAvatar = editAvatar.AvatarName;
+        }
+
+        public void EditProfile(string username, EditProfileViewModel profile)
+        {
+            if (profile.UserAvatar != null)
             {
                 string imagePath = "";
-                if(profile.AvatarName != "Defult.jpg")
+                if (profile.AvatarName != "Defult.jpg")
                 {
                     imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", profile.AvatarName);
                     if (File.Exists(imagePath))
@@ -153,6 +178,29 @@ namespace TopLearn.Core.Services
             user.UserAvatar = profile.AvatarName;
 
             UpdateUser(user);
+        }
+
+        public void EditUserForAdmin(EditUserViewModel editUser)
+        {
+            User user = GetUserById(editUser.UserId);
+            user.Email = editUser.Email;
+            if (!string.IsNullOrEmpty(editUser.PassWord))
+            {
+                user.PassWord = PasswordHelper.EncodePasswordMd5(editUser.PassWord);
+            }
+
+            if (editUser.UserAvatar != null)
+            {
+                EditAvatar(new EditAvatarUserViewModel()
+                {
+                    AvatarName = editUser.AvatarName,
+                    UserAvatar = editUser.UserAvatar,
+                    UserId = editUser.UserId
+                });
+            }
+
+            _context.Users.Update(user);
+            _context.SaveChanges();
         }
 
         public EditProfileViewModel GetDataForEditProfileUser(string username)
@@ -185,9 +233,27 @@ namespace TopLearn.Core.Services
             return _context.Users.SingleOrDefault(u => u.Email == Email);
         }
 
+        public User GetUserById(int userId)
+        {
+            return _context.Users.Find(userId);
+        }
+
         public User GetUserByUserName(string username)
         {
             return _context.Users.SingleOrDefault(u => u.UserName == username);
+        }
+
+        public EditUserViewModel GetUserForShowInEditMode(int userId)
+        {
+            return _context.Users.Where(u => u.UserId == userId)
+                .Select(u => new EditUserViewModel()
+                {
+                    UserId = u.UserId,
+                    AvatarName = u.UserAvatar,
+                    Email = u.Email,
+                    UserName = u.UserName,
+                    userRoles = u.UserRoles.Select(r => r.RoleId).ToList()
+                }).Single();
         }
 
         public int GetUserIdByUserName(string userName)
@@ -244,7 +310,7 @@ namespace TopLearn.Core.Services
                 .Select(w => new WalletViewModel()
                 {
                     Amount = w.Amount,
-                    Type = w.TypeId, 
+                    Type = w.TypeId,
                     Description = w.Description,
                     DateTime = w.CreateDate
                 }).ToList();

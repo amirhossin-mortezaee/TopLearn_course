@@ -30,6 +30,15 @@ namespace TopLearn.Core.Services
             _context.SaveChanges();
         }
 
+        public void EditRolesUser(int userId, List<int> rolesId)
+        {
+            //حذف رول های قدیمی
+            _context.userRoles.Where(r => r.UserId == userId).ToList().ForEach(r => _context.userRoles.Remove(r));
+
+            //اضافه کردن رول جدید
+            AddRolesToUser(rolesId, userId);
+        }
+
         public List<Role> GetRoles()
         {
             return _context.Roles.ToList();

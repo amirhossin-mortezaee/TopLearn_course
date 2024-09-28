@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http.Internal;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TopLearn.Core.DTOs;
@@ -16,9 +17,11 @@ namespace TopLearn.Core.Services.InterFaces
         User GetUserByEmail(string Email);
         User GetUserByUserName(string username);
         User GetUserByActiveCode(string activeCode);
+        User GetUserById(int userId);
         void UpdateUser(User user);
         bool ActiveAccount(string activeCode);
         int GetUserIdByUserName(string userName);
+        void EditAvatar(EditAvatarUserViewModel editAvatar);
 
         #region UserPanel
         InformationUserViewModel GetUserInformation(string username);
@@ -43,6 +46,9 @@ namespace TopLearn.Core.Services.InterFaces
 
         UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "" , string filteruserName = "");
         int AddUserFromAdmin(CreateUserViewModel user);
+
+        EditUserViewModel GetUserForShowInEditMode(int userId);
+        void EditUserForAdmin(EditUserViewModel editUser);
 
         #endregion
     }
