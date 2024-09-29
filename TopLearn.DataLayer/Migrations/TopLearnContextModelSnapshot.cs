@@ -25,6 +25,8 @@ namespace TopLearn.DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsDelete");
+
                     b.Property<string>("RoleTitle")
                         .IsRequired()
                         .HasMaxLength(200);

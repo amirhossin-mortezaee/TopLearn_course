@@ -16,6 +16,13 @@ namespace TopLearn.Core.Services
             _context = context;
         }
 
+        public int AddRole(Role role)
+        {
+            _context.Roles.Add(role);
+            _context.SaveChanges();
+            return role.RoleId;
+        }
+
         public void AddRolesToUser(List<int> roleIds, int userId)
         {
             foreach(var roleId in roleIds)
@@ -30,6 +37,12 @@ namespace TopLearn.Core.Services
             _context.SaveChanges();
         }
 
+        public void DeleteRole(Role Role)
+        {
+            Role.IsDelete = true;
+            UpdateRole(Role);
+        }
+
         public void EditRolesUser(int userId, List<int> rolesId)
         {
             //حذف رول های قدیمی
@@ -39,9 +52,20 @@ namespace TopLearn.Core.Services
             AddRolesToUser(rolesId, userId);
         }
 
+        public Role GetRoleById(int RoleId)
+        {
+            return _context.Roles.Find(RoleId);
+        }
+
         public List<Role> GetRoles()
         {
             return _context.Roles.ToList();
+        }
+
+        public void UpdateRole(Role role)
+        {
+            _context.Roles.Update(role);
+            _context.SaveChanges();
         }
     }
 }

@@ -116,3 +116,13 @@ G:\Course\ASP.NET Core Advance\Source\E21\TopLearn\TopLearn.DataLayer\obj\Debug\
 G:\Course\ASP.NET Core Advance\Source\E21\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.csproj.CoreCompileInputs.cache
 G:\Course\ASP.NET Core Advance\Source\E21\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.dll
 G:\Course\ASP.NET Core Advance\Source\E21\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.pdb
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\bin\Debug\netcoreapp2.1\TopLearn.DataLayer.deps.json
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\bin\Debug\netcoreapp2.1\TopLearn.DataLayer.dll
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\bin\Debug\netcoreapp2.1\TopLearn.DataLayer.pdb
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.csproj.AssemblyReference.cache
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.AssemblyInfoInputs.cache
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.AssemblyInfo.cs
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.csproj.CoreCompileInputs.cache
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.dll
+G:\Course\ASP.NET Core Advance\Source\E22\TopLearn\TopLearn.DataLayer\obj\Debug\netcoreapp2.1\TopLearn.DataLayer.pdb

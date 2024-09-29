@@ -9,7 +9,7 @@ namespace TopLearn.DataLayer.Context
 {
     public class TopLearnContext : DbContext
     {
-        public TopLearnContext(DbContextOptions<TopLearnContext> options ):base(options)
+        public TopLearnContext(DbContextOptions<TopLearnContext> options) : base(options)
         {
 
         }
@@ -29,6 +29,9 @@ namespace TopLearn.DataLayer.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
+                .HasQueryFilter(u => !u.IsDelete);
+
+            modelBuilder.Entity<Role>()
                 .HasQueryFilter(u => !u.IsDelete);
 
             base.OnModelCreating(modelBuilder);
