@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using TopLearn.DataLayer.Entities.Permissions;
 
 namespace TopLearn.DataLayer.Entities.User
 {
@@ -25,6 +26,7 @@ namespace TopLearn.DataLayer.Entities.User
         #region Relations
 
         public virtual List<UserRole> UserRoles { get; set; }
+        public List<RolePermission> RolePermissions { get; set; }
 
         #endregion
     }

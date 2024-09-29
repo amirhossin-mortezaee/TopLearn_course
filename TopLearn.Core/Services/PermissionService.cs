@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Context;
+using TopLearn.DataLayer.Entities.Permissions;
 using TopLearn.DataLayer.Entities.User;
 
 namespace TopLearn.Core.Services
@@ -14,6 +15,20 @@ namespace TopLearn.Core.Services
         public PermissionService(TopLearnContext context)
         {
             _context = context;
+        }
+
+        public void AddPermissionsToRole(int RoleId, List<int> permission)
+        {
+            foreach (var p in permission)
+            {
+                _context.RolePermission.Add(new RolePermission()
+                {
+                    PermissionId = p,
+                    RoleId = RoleId
+                });
+            }
+
+            _context.SaveChanges();
         }
 
         public int AddRole(Role role)
@@ -52,6 +67,11 @@ namespace TopLearn.Core.Services
             AddRolesToUser(rolesId, userId);
         }
 
+        public List<Permission> GetAllPermission()
+        {
+            return _context.Permission.ToList();
+        }
+
         public Role GetRoleById(int RoleId)
         {
             return _context.Roles.Find(RoleId);
@@ -60,6 +80,21 @@ namespace TopLearn.Core.Services
         public List<Role> GetRoles()
         {
             return _context.Roles.ToList();
+        }
+
+        public List<int> PermissionsRole(int RoleId)
+        {
+            return _context.RolePermission.Where(r => r.RoleId == RoleId)
+                .Select(r => r.PermissionId)
+                .ToList();
+        }
+
+        public void UpdatePermissionRole(int RoleId, List<int> permissions)
+        {
+            _context.RolePermission.Where(p => p.RoleId == RoleId)
+                .ToList().ForEach(p => _context.RolePermission.Remove(p));
+
+            AddPermissionsToRole(RoleId , permissions);
         }
 
         public void UpdateRole(Role role)

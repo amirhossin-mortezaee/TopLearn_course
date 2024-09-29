@@ -21,16 +21,18 @@ namespace TopLearn.Web.Pages.Admin.Roles
         public Role Role { get; set; }
         public void OnGet()
         {
-
+            ViewData["Permissions"] = _PermissionService.GetAllPermission();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(List<int> SelectedPermission)
         {
             if (!ModelState.IsValid)
                 return Page();
 
             Role.IsDelete = false;
             int RoleId = _PermissionService.AddRole(Role);
+
+            _PermissionService.AddPermissionsToRole(RoleId , SelectedPermission);
 
             return RedirectToPage("Index");
         }
