@@ -22,5 +22,9 @@ namespace TopLearn.DataLayer.Entities.Course
 
         [ForeignKey("ParenId")]
         public List<CourseGroup> CourseGroups { get; set; }
+        [InverseProperty("CourseGroup")]
+        public List<Course> Courses { get; set; }
+        [InverseProperty("Group")]
+        public List<Course> SubGroup { get; set; }
     }
 }

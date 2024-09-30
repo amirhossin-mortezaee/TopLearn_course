@@ -37,6 +37,10 @@ namespace TopLearn.DataLayer.Context
         #region Course
 
         public DbSet<CourseGroup> CourseGroup { get; set; }
+        public DbSet<CourseLevel> CourseLevels { get; set; }
+        public DbSet<CourseStatus> CourseStatuses { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseEpisode> CourseEpisodes { get; set; }
 
         #endregion
 
