@@ -49,11 +49,11 @@ namespace TopLearn.Core.DTOs
         [Display(Name = "کلمه عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
-        public string PassWord { get; set; }
+        public string PassWord { get; set; } = null;
 
-        public IFormFile UserAvatar { get; set; }
+        public IFormFile UserAvatar { get; set; } = null;
 
-        public List<int> userRoles { get; set; }
+        public List<int> userRoles { get; set; } = null;
         public string AvatarName { get; set; }
     }
 

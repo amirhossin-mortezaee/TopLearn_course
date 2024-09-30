@@ -52,6 +52,25 @@ namespace TopLearn.Core.Services
             _context.SaveChanges();
         }
 
+        public bool CheckPermission(int permissionId, string userName)
+        {
+            int userId = _context.Users.Single(u => u.UserName == userName).UserId;
+
+            List<int> UserRoles = _context.userRoles
+                .Where(u => u.UserId == userId).Select(u => u.RoleId).ToList();
+
+            if(!UserRoles.Any())
+            {
+                return false;
+            }
+
+            List<int> RolesPermission = _context.RolePermission
+                .Where(p => p.PermissionId == permissionId)
+                .Select(p => p.RoleId).ToList();
+
+            return RolesPermission.Any(p => UserRoles.Contains(p));
+        }
+
         public void DeleteRole(Role Role)
         {
             Role.IsDelete = true;
