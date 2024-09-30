@@ -19,6 +19,27 @@ namespace TopLearn.DataLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("TopLearn.DataLayer.Entities.Course.CourseGroup", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GroupTitle")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.Property<bool>("IsDelete");
+
+                    b.Property<int?>("ParenId");
+
+                    b.HasKey("GroupId");
+
+                    b.HasIndex("ParenId");
+
+                    b.ToTable("CourseGroup");
+                });
+
             modelBuilder.Entity("TopLearn.DataLayer.Entities.Permissions.Permission", b =>
                 {
                     b.Property<int>("PermissionId")
@@ -167,6 +188,13 @@ namespace TopLearn.DataLayer.Migrations
                     b.HasKey("TypeId");
 
                     b.ToTable("WalletTypes");
+                });
+
+            modelBuilder.Entity("TopLearn.DataLayer.Entities.Course.CourseGroup", b =>
+                {
+                    b.HasOne("TopLearn.DataLayer.Entities.Course.CourseGroup")
+                        .WithMany("CourseGroups")
+                        .HasForeignKey("ParenId");
                 });
 
             modelBuilder.Entity("TopLearn.DataLayer.Entities.Permissions.Permission", b =>

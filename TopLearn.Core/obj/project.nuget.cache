@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8XY3lT5tyvEyE++xaUQ4B6Z4IFHWwXPhp7R83RvcxwnEg5xsTX7XEgr1sxBg5W8B5XCO5G/A51JtRowE/yp57w==",
+  "dgSpecHash": "hb9Da1WFL4zX21lZDmdZ5ktHvXCA//n+jwZWwmsijpVfPwErQ/qvz1qAe5YZFnr56XO80hJ5nTOpvRJXJHYaqQ==",
   "success": true,
-  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E24\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E25\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\1.1.0\\microsoft.aspnetcore.antiforgery.1.1.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnetcore.authorization\\1.1.0\\microsoft.aspnetcore.authorization.1.1.0.nupkg.sha512",
