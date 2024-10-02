@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using TopLearn.Core.DTOs.Course;
+using TopLearn.Core.Generator;
 using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Context;
 using TopLearn.DataLayer.Entities.Course;
@@ -19,9 +23,34 @@ namespace TopLearn.Core.Services
             _Context = Context;
         }
 
+        public int AddCourse(Course course, IFormFile imgCourse, IFormFile courseDemo)
+        {
+            course.CreateDate = DateTime.Now;
+            course.CourseImageName = "no-photo.jpg";
+            if(imgCourse != null)
+            {
+               course.CourseImageName = SaveImage(imgCourse);
+            }
+
+            _Context.Add(course);
+            _Context.SaveChanges();
+            return course.CourseId;
+        }
+
         public List<CourseGroup> GetAllGroup()
         {
             return _Context.CourseGroup.ToList();
+        }
+
+        public List<ShowCourseForAdminVewModel> GetCoursesForAdmin()
+        {
+            return _Context.Courses.Select(c => new ShowCourseForAdminVewModel()
+            {
+                CourseId = c.CourseId,
+                Tirle = c.CourseTitle,
+                ImageName = c.CourseImageName,
+                EpisodeCount = c.CourseEpisodes.Count()
+            }).ToList();
         }
 
         public List<SelectListItem> GetGroupForManageCourse()
@@ -70,6 +99,19 @@ namespace TopLearn.Core.Services
                     Text = u.User.UserName,
                     Value = u.UserId.ToString()
                 }).ToList();
+        }
+
+        public string SaveImage(IFormFile Img)
+        {
+            string imageName = NameGenerator.GenerateUniqCode() + Path.GetExtension(Img.FileName);
+            string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Course/Image", imageName);
+
+            using (var stream = new FileStream(imagePath, FileMode.Create))
+            {
+                Img.CopyTo(stream);
+            }
+
+            return imageName;
         }
     }
 }

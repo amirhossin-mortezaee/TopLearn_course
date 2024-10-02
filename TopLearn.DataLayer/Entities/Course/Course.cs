@@ -26,7 +26,7 @@ namespace TopLearn.DataLayer.Entities.Course
         [Display(Name = "شرح دوره")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string CourseDescription { get; set; }
-        [Display(Name = "")]
+        [Display(Name = "قیمت دوره")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public int CoursePrice { get; set; }
         [MaxLength(600)]

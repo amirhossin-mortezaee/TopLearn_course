@@ -2,14 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using TopLearn.Core.Security;
 using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Entities.Course;
 
 namespace TopLearn.Web.Pages.Admin.Courses
 {
+    [PermissionChecker(11)]
     public class CreateCourseModel : PageModel
     {
         private ICourseService _CourseService;
@@ -36,6 +39,19 @@ namespace TopLearn.Web.Pages.Admin.Courses
 
             var Statues = _CourseService.GetStatues();
             ViewData["Statues"] = new SelectList(Statues, "Value", "Text");
+        }
+
+        public IActionResult OnPost(IFormFile imgCourseUp , IFormFile demoUp)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _CourseService.AddCourse(Course, imgCourseUp , demoUp);
+
+            return RedirectToPage("Index");
+
         }
     }
 }

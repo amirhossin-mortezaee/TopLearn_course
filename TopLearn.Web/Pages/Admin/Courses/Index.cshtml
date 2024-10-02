@@ -27,6 +27,34 @@
                 <div class="container">
                     <a asp-page="CreateCourse" class="btn btn-outline btn-success" id="create">افزودن دوره جدید</a>
                 </div>
+                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                    <thead>
+                        <tr>
+                            <th> تصویر</th>
+                            <th>عنوان دوره</th>
+                            <th>تعداد جلسه</th>
+                            <th>دستورات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListCourse)
+                        {
+                            <tr>
+                                <td><img src="/Course/Image/@item.ImageName" class="thumbnail" style="max-width : 120px;"/></td>
+                                <td>@item.Tirle</td>
+                                <td>@item.EpisodeCount</td>
+                                <td>
+                                    @*<a href="/Admin/Roles/EditRole/@role.RoleId" class="btn btn-warning btn-sm">
+                                        ویرایش
+                                    </a>
+                                    <a href="/Admin/Roles/DeleteRole/@role.RoleId" class="btn btn-danger btn-sm">
+                                        حذف
+                                    </a>*@
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
             <!-- /.panel-body -->
         </div>
