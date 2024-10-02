@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,11 @@ namespace TopLearn.Web.Controllers
     public class HomeController : Controller
     {
         private IUserService _userService;
-        public HomeController(IUserService userService)
+        private ICourseService _CourseService;
+        public HomeController(IUserService userService , ICourseService CourseService)
         {
             _userService = userService;
+            _CourseService = CourseService;
         }
         public IActionResult Index() => View();
 
@@ -39,6 +42,16 @@ namespace TopLearn.Web.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult GetSubGroups(int id)
+        {
+            List<SelectListItem> list = new List<SelectListItem>()
+            {
+                new SelectListItem(){Text = "انتخاب کنید" , Value = ""}
+            };
+            list.AddRange(_CourseService.GetSubGroupForManageCourse(id));
+            return Json(new SelectList(list, "Value", "Text"));
         }
     }
 }
