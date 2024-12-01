@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pfHHA8xuCEaGqFMGuU5RI5NtQ/mzmZnLQ3Q86coI3z1zBRpTlLfUD9qTJkOR1XvOM6rseCEof2fL2Hc/sZBhsA==",
+  "dgSpecHash": "1zjWjCgMUUJ06di75kYd5k5StpMDhtAa5FR/+LjpnymMcLQIVpi2SXPXhoaxIo78k+upDlSV7k2ITUlXF+jUFA==",
   "success": true,
-  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+  "projectFilePath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\corecompat.system.drawing.v2\\5.2.0-preview1-r131\\corecompat.system.drawing.v2.5.2.0-preview1-r131.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\1.1.0\\microsoft.aspnetcore.antiforgery.1.1.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnetcore.authorization\\1.1.0\\microsoft.aspnetcore.authorization.1.1.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\1.1.0\\microsoft.aspnetcore.cryptography.internal.1.1.0.nupkg.sha512",
@@ -146,6 +147,7 @@
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.security.cryptography.openssl\\4.0.0\\system.security.cryptography.openssl.4.0.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.security.cryptography.primitives\\4.0.0\\system.security.cryptography.primitives.4.0.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.1.0\\system.security.cryptography.x509certificates.4.1.0.nupkg.sha512",
+    "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.security.permissions\\4.4.0-preview1-25305-02\\system.security.permissions.4.4.0-preview1-25305-02.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.security.principal\\4.3.0\\system.security.principal.4.3.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
     "C:\\Users\\alizakizadeh\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",

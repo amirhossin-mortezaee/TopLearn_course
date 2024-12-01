@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "CoreCompat.System.Drawing.v2/5.2.0-preview1-r131": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Permissions": "4.4.0-preview1-25305-02"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreCompat.System.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreCompat.System.Drawing.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4648,6 +4660,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "CoreCompat.System.Drawing.v2": "5.2.0-preview1-r131",
           "Microsoft.AspNetCore.Mvc.Razor": "1.1.0",
           "Microsoft.EntityFrameworkCore": "2.1.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.2",
@@ -4677,6 +4690,18 @@
     }
   },
   "libraries": {
+    "CoreCompat.System.Drawing.v2/5.2.0-preview1-r131": {
+      "sha512": "+WrScg+skrIiNLBwbl+BFdlSyzUqKOZtAUskW2xfI8vcKQdDJp+UoreUFC9uMSEgSiAR32e5l3fTtFDUKEpRaA==",
+      "type": "package",
+      "path": "corecompat.system.drawing.v2/5.2.0-preview1-r131",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "corecompat.system.drawing.v2.5.2.0-preview1-r131.nupkg.sha512",
+        "corecompat.system.drawing.v2.nuspec",
+        "lib/netstandard2.0/CoreCompat.System.Drawing.dll"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -12728,11 +12753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+      "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
       "projectName": "TopLearn.Web",
-      "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
+      "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Web\\TopLearn.Web.csproj",
       "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-      "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Web\\obj\\",
+      "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12753,11 +12778,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
-              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
+            "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj": {
+              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj"
             },
-            "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
-              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+            "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
             }
           }
         }

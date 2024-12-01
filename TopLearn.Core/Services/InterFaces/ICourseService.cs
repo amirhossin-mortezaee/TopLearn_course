@@ -24,6 +24,7 @@ namespace TopLearn.Core.Services.InterFaces
 
         int AddCourse(Course course, IFormFile imgCourse, IFormFile courseDemo);
         string SaveImage(IFormFile Img);
+        string SaveDemo(IFormFile videoDemo);
         List<ShowCourseForAdminVewModel> GetCoursesForAdmin();
 
         #endregion

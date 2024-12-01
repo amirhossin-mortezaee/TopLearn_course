@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "CoreCompat.System.Drawing.v2/5.2.0-preview1-r131": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Permissions": "4.4.0-preview1-25305-02"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreCompat.System.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreCompat.System.Drawing.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/1.1.0": {
         "type": "package",
         "dependencies": {
@@ -2367,6 +2379,18 @@
           }
         }
       },
+      "System.Security.Permissions/4.4.0-preview1-25305-02": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "4.4.0-preview1-25305-02"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Security.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Permissions.dll": {}
+        }
+      },
       "System.Security.Principal/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2696,6 +2720,18 @@
     }
   },
   "libraries": {
+    "CoreCompat.System.Drawing.v2/5.2.0-preview1-r131": {
+      "sha512": "+WrScg+skrIiNLBwbl+BFdlSyzUqKOZtAUskW2xfI8vcKQdDJp+UoreUFC9uMSEgSiAR32e5l3fTtFDUKEpRaA==",
+      "type": "package",
+      "path": "corecompat.system.drawing.v2/5.2.0-preview1-r131",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "corecompat.system.drawing.v2.5.2.0-preview1-r131.nupkg.sha512",
+        "corecompat.system.drawing.v2.nuspec",
+        "lib/netstandard2.0/CoreCompat.System.Drawing.dll"
+      ]
+    },
     "Microsoft.AspNetCore.Antiforgery/1.1.0": {
       "sha512": "6HM8/rsSGAQybSZ9sNP2f0Xqh507OJu3kvqRksXeHUXV72yuwFpnauGkfIMSt+gwPSvyk8qGqZB2m4sKCUomhA==",
       "type": "package",
@@ -7450,6 +7486,27 @@
         "system.security.cryptography.x509certificates.nuspec"
       ]
     },
+    "System.Security.Permissions/4.4.0-preview1-25305-02": {
+      "sha512": "W4+sOQhP/hijYNMx/TQK2zXP1+8a9WYAvuMQS4XBe+Phfv8fqc4h+U/fzkWC5BuNN0InNY46F5WT1bbOyObQdg==",
+      "type": "package",
+      "path": "system.security.permissions/4.4.0-preview1-25305-02",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/net461/System.Security.Permissions.dll",
+        "lib/netstandard2.0/System.Security.Permissions.dll",
+        "ref/net461/System.Security.Permissions.dll",
+        "ref/netstandard2.0/System.Security.Permissions.dll",
+        "ref/uap10.1/System.Security.Permissions.dll",
+        "runtimes/win/lib/net461/System.Security.Permissions.dll",
+        "system.security.permissions.4.4.0-preview1-25305-02.nupkg.sha512",
+        "system.security.permissions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.Principal/4.3.0": {
       "sha512": "I1tkfQlAoMM2URscUtpcRo/hX0jinXx6a/KUtEQoz3owaYwl3qwsO8cbzYVVnjxrzxjHo3nJC+62uolgeGIS9A==",
       "type": "package",
@@ -8382,6 +8439,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "CoreCompat.System.Drawing.v2 >= 5.2.0-preview1-r131",
       "Microsoft.AspNetCore.Mvc.Razor >= 1.1.0",
       "Microsoft.EntityFrameworkCore >= 2.1.14",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.1.2",
@@ -8397,11 +8455,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+      "projectUniqueName": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
       "projectName": "TopLearn.Core",
-      "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
+      "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Core\\TopLearn.Core.csproj",
       "packagesPath": "C:\\Users\\alizakizadeh\\.nuget\\packages\\",
-      "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.Core\\obj\\",
+      "outputPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8422,8 +8480,8 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
-              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E28\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
+            "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj": {
+              "projectPath": "G:\\Course\\ASP.NET Core Advance\\Source\\E29\\TopLearn\\TopLearn.DataLayer\\TopLearn.DataLayer.csproj"
             }
           }
         }
@@ -8438,6 +8496,10 @@
       "netcoreapp2.1": {
         "targetAlias": "netcoreapp2.1",
         "dependencies": {
+          "CoreCompat.System.Drawing.v2": {
+            "target": "Package",
+            "version": "[5.2.0-preview1-r131, )"
+          },
           "Microsoft.AspNetCore.Mvc.Razor": {
             "target": "Package",
             "version": "[1.1.0, )"

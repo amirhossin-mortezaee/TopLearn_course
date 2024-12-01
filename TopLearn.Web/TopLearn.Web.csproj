@@ -42,4 +42,8 @@
     <None Include="wwwroot\js\script.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Course\demoes\" />
+  </ItemGroup>
+
 </Project>

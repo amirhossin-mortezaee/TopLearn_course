@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using TopLearn.Core.Convertors;
 using TopLearn.Core.DTOs.Course;
 using TopLearn.Core.Generator;
+using TopLearn.Core.Security;
 using TopLearn.Core.Services.InterFaces;
 using TopLearn.DataLayer.Context;
 using TopLearn.DataLayer.Entities.Course;
@@ -27,9 +29,14 @@ namespace TopLearn.Core.Services
         {
             course.CreateDate = DateTime.Now;
             course.CourseImageName = "no-photo.jpg";
-            if(imgCourse != null)
+            if(imgCourse != null && imgCourse.IsImage())
             {
                course.CourseImageName = SaveImage(imgCourse);
+            }
+
+            if(courseDemo != null)
+            {
+                course.DemoFileName = SaveDemo(courseDemo);
             }
 
             _Context.Add(course);
@@ -101,15 +108,32 @@ namespace TopLearn.Core.Services
                 }).ToList();
         }
 
+        public string SaveDemo(IFormFile videoDemo)
+        {
+            string VideoName = NameGenerator.GenerateUniqCode() + Path.GetExtension(videoDemo.FileName);
+            string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Course/demoes", VideoName);
+
+            using (var stream = new FileStream(imagePath, FileMode.Create))
+            {
+                videoDemo.CopyTo(stream);
+            }
+
+            return VideoName;
+        }
+
         public string SaveImage(IFormFile Img)
         {
             string imageName = NameGenerator.GenerateUniqCode() + Path.GetExtension(Img.FileName);
             string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Course/Image", imageName);
+            string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Course/thumb", imageName);
 
             using (var stream = new FileStream(imagePath, FileMode.Create))
             {
                 Img.CopyTo(stream);
             }
+
+            ImageConvertor imgResizer = new ImageConvertor();
+            imgResizer.Image_resize(imagePath, thumbPath, 150);
 
             return imageName;
         }
